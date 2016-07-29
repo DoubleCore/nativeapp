@@ -12,12 +12,17 @@ import {
   View
 } from 'react-native';
 
-import App from './src/app.js';
+import App from './src/containers/app';
+import { Provider } from 'react-redux';
+import store from './src/config/store';
+
 
 class NativeApp extends Component {
   render() {
     return (
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     );
   }
 }
